@@ -1,4 +1,4 @@
-myApp.config(function($stateProvider, $urlRouterProvider) {
+(function($stateProvider, $urlRouterProvider) {
   $locationProvider
     .html5Mode({
     enabled: true,
@@ -15,6 +15,6 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
 
 angular
-    .module('bloc', ['ui.router'], ["firebase"])
+    .module('bloc', ['ui.router', 'firebase'])
     .config(config);
  })();
