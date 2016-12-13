@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html ng-app="bloc">
+<html ng-app="blocChat">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Bloc Base Project</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
-<body ng-controller="SampleCtrl">
+<body>
     <ui-view></ui-view>
-    <script src="/scripts/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="js/angular-ui-router.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/RoomCtrl.js"></script>
+    <script src="/scripts/controllers/HomeCtrl.js"></script>
     <script>
-    // Initialize the Firebase SDK
     var config = {
       apiKey: '<your-api-key>',
       authDomain: '<your-auth-domain>',
@@ -22,6 +23,6 @@
       storageBucket: '<your-storage-bucket>'
     };
       firebase.initializeApp(config);
-</script>
+    </script>
 </body>
 </html>
