@@ -1,2 +1,6 @@
 <h1>Home Page</h1>
+<div ng-controller="AddRoomCtrl as addRoom">
+   <button ng-click="addRoom.open()">Add Room</button>
+</div>
 <div ng-repeat="room in home.rooms">{{ room.$value }}</div>
+
