@@ -4,11 +4,11 @@
         <h4>Create a new room</h4>
     </div>
     <div class='modal-body'>
-      Form stuff goes here
+      <input ng-model="$ctrl.roomName">
     </div>
     <div class='modal-footer'>
-      <button class='btn btn-success' ng-click='$ctrl.save() && $ctrl.cancel()'>Okay</button>
-      <button class='btn' ng-click='$ctrl.cancel()'>Cancel</button>
+      <button type='button' class='btn btn-success' ng-click='$ctrl.save()' data-dismiss="cancel">Okay</button>
+      <button type='button' class='btn' ng-click="$ctrl.cancel()" data-dismiss="cancel">Cancel</button>
     </div>
   </div>
 </div>

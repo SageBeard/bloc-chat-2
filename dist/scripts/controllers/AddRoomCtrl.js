@@ -8,7 +8,7 @@
         ariaLabelledBy: 'modal-title',
         ariaDescribedBy: 'modal-body',
         templateUrl: '/templates/roomModal.html',
-        controller: ModalInstanceCtrl,
+        controller: 'ModalInstanceCtrl',
         controllerAs: '$ctrl',
         size: size,
         appendTo: parentElem
@@ -16,16 +16,17 @@
     }
   }
 
-  function ModalInstanceCtrl(Room, $uibModalInstance) {
+  function ModalInstanceCtrl(Room, $uibModalInstance) {    
     var $ctrl = this;
     $ctrl.roomName = "";
-
     $ctrl.cancel = function () {
       $uibModalInstance.dismiss('cancel');
     };
 
-    $ctrl.save = function () {
-      Room.rooms.$add({title: $ctrl.roomName});
+    $ctrl.save = function () {  
+      var newRoom = $ctrl.roomName;
+      Room.addRoom(newRoom)
+
       $uibModalInstance.dismiss('cancel');
     };
   }
@@ -33,5 +34,5 @@
   angular
     .module('blocChat')
     .controller('AddRoomCtrl', ['Room', '$uibModal', AddRoomCtrl])
-    .controller('ModalInstanceCtrl', '$uibModalInstance', [ModalInstanceCtrl]);
+    .controller('ModalInstanceCtrl', ['Room', '$uibModalInstance', ModalInstanceCtrl]);
 })();
