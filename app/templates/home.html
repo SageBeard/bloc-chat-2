@@ -1,6 +1,12 @@
-<h1>Home Page</h1>
+<h1>Bloc Chat</h1>
 <div ng-controller="AddRoomCtrl as addRoom">
    <button ng-click="addRoom.open()">Add Room</button>
 </div>
-<div ng-repeat="room in home.rooms">{{ room.$value }}</div>
-
+<div ng-repeat="room in home.rooms">
+   <a class="chatroom" ng-click="selectRoom(room.$id)">{{ room.$value }}</a>
+</div>
+<div class="container">
+   <div class="row">
+      <div class="col-xs-6">{{ room.$value }}</div>
+   </div>
+</div>
