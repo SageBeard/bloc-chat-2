@@ -3,10 +3,13 @@
    <button ng-click="addRoom.open()">Add Room</button>
 </div>
 <div ng-repeat="room in home.rooms">
-   <a class="chatroom" ng-click="selectRoom(room.$id)">{{ room.$value }}</a>
+   <a class="chatroom" ng-click="home.selectRoom(room.$id)">{{ room.$value }}</a>
+</div>
+<div ng-repeat="message in home.messages">
+   <p class="message">{{ message.content }}</p>
 </div>
 <div class="container">
    <div class="row">
-      <div class="col-xs-6">{{ room.$value }}</div>
+      <div class="col-xs-6">{{ home.currentRoom }}</div>
    </div>
 </div>

@@ -1,11 +1,11 @@
 (function() {
   function Message($firebaseArray) {
-    var ref = firebase.database().ref().child("messages").orderByChild("roomId");
-    var messages = $firebaseArray(ref);
-    
+    var ref = firebase.database().ref().child('messages');
+
     return {
       getByRoomId: function (roomId) {
-        messages.equalTo('roomId');// Filter the messages by their room ID.
+        return $firebaseArray(ref.orderByChild('roomId').equalTo(roomId));
+        console.log("messages");
       }
     };
   }
@@ -14,3 +14,4 @@
     .module('blocChat')
     .factory('Message', ['$firebaseArray', Message]);
 })();
+
