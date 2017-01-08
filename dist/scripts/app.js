@@ -16,7 +16,7 @@
 
 }
   
-function BlocChatCookies($cookies, $uibModal) {
+function BlocChatCookies($cookies, $uibModal, $uibModalInstance, EnterUserNameCtrl) {
   var currentUser = $cookies.get('blocChatCurrentUser');
   if (!currentUser || currentUser === '') {
      var modalInstance = $uibModal.open({
@@ -31,7 +31,9 @@ function BlocChatCookies($cookies, $uibModal) {
   }
 
     function EnterUserNameCtrl($cookies, $uibModalInstance) {
-        this.setUsername = function(userName) {
+        var $ctrl = this;
+        $ctrl.name = "";
+        $ctrl.setUsername = function(userName) {
            $cookies.put('blocChatCurrentUser', 'userName');// set new cookie here
            $uibModalInstance.dismiss('cancel');
         };
