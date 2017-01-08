@@ -25,14 +25,23 @@ function BlocChatCookies($cookies, $uibModal) {
         ariaDescribedBy: 'modal-body',
         templateUrl: '/templates/nameModal.html',
         controllerAs: '$ctrl',
+        controller: 'EnterUserNameCtrl',
         backdrop: 'static',
         keyboard: false
      });
   }
 }
 
+    function EnterUserNameCtrl($cookies, $uibModalInstance) {
+
+        this.setUsername = function(userName) {
+          // set new cookie here
+        };
+    }
+}
 angular
     .module('blocChat', ['ui.router', 'ui.bootstrap', 'firebase', 'ngCookies'])
+    .contoller('EnterUserNameCtrl', ['$cookies', '$uibModalInstance', EnterUserNameCtrl])
     .config(config)
     .run(['$cookies', '$uibModal', BlocChatCookies]);
 
