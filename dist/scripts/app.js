@@ -29,6 +29,7 @@ function BlocChatCookies($cookies, $uibModal, $uibModalInstance, EnterUserNameCt
         keyboard: false
      });
   }
+}
 
     function EnterUserNameCtrl($cookies, $uibModalInstance) {
         var $ctrl = this;
@@ -37,8 +38,8 @@ function BlocChatCookies($cookies, $uibModal, $uibModalInstance, EnterUserNameCt
            $cookies.put('blocChatCurrentUser', 'userName');// set new cookie here
            $uibModalInstance.dismiss('cancel');
         };
+        
     }
-}
  
 angular
     .module('blocChat', ['ui.router', 'ui.bootstrap', 'firebase', 'ngCookies'])
