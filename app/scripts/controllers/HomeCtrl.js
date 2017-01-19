@@ -7,7 +7,15 @@
      this.currentRoom = roomId, //show room's message container
      this.messages = Message.getByRoomId(roomId);
        console.log("room");
+     
    } 
+   this.sendMessage = function(newChatMessage) {
+      Message.send({
+        message: newChatMessage,
+        roomId: this.currentRoom
+      })
+   }
+   // function called sendMessage, using the Message Service
   };
 
   angular
