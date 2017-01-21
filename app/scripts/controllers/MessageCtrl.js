@@ -11,7 +11,7 @@
       },
       
       send: function (newMessage) {
-        ref.$add(newMessage);
+        messages.$add(newMessage);
           console.log("submit message")
         //submits to firebase server
         //inject cookies service

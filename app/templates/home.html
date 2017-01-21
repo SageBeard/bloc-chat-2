@@ -11,7 +11,7 @@
 <div class="container">
       <div class="col-xs-6">{{ home.currentRoom }}</div>
 </div>
-<form ng-show="home.currentRoom" ng-submit="home.sendMessage(message.content)">
+<form ng-show="home.currentRoom" ng-submit="home.sendMessage()">
   New Message:
   <input type="text" ng-model="home.messageInput" name="text" />
   <input type="submit" id="submit" value="Submit" />
