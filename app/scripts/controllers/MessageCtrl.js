@@ -10,8 +10,8 @@
         //method to filter message
       },
       
-      send: function(newMessage) {
-          messages.$add(newMessage);
+      send: function (newMessage) {
+        ref.$add(newMessage);
           console.log("submit message")
         //submits to firebase server
         //inject cookies service

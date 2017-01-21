@@ -3,15 +3,18 @@
    this.rooms = Room.all;
    this.messages = [];
    this.currentRoom = null;
+   this.messageInput = "";
    this.selectRoom = function(roomId) { //store active chat room 
      this.currentRoom = roomId, //show room's message container
      this.messages = Message.getByRoomId(roomId);
        console.log("room");
      
+     
    } 
    this.sendMessage = function(newChatMessage) {
+  
       Message.send({
-        message: newChatMessage,
+        content: newChatMessage,
         roomId: this.currentRoom
       })
    }
